@@ -1,0 +1,61 @@
+---
+import Default from "@astrojs/starlight/components/TableOfContents.astro";
+import { Icon } from "@astrojs/starlight/components";
+
+interface Props {
+  pin?: boolean;
+}
+
+const { pin = false } = Astro.props;
+---
+
+<div class="toggle-button">
+  <Icon
+    name="left-caret"
+    size="2rem"
+    class:list={["margin-left-1rem", !pin ? "hidden" : ""]}
+  />
+  <Icon
+    name="bars"
+    size="2rem"
+    class:list={["margin-left-1rem", pin ? "hidden" : ""]}
+  />
+</div>
+
+<div class:list={["content", !pin ? "hidden" : ""]}>
+  <Default>
+    <slot />
+  </Default>
+</div>
+
+<style>
+  .toggle-button {
+    cursor: pointer;
+    user-select: none; /* Prevent text from being selected */
+  }
+
+  .margin-left-1rem {
+    margin-left: -1rem;
+  }
+
+  .hidden {
+    display: none;
+  }
+</style>
+
+<script>
+  const toggleButton = document.querySelector<HTMLDivElement>(".toggle-button");
+  if (toggleButton) {
+    toggleButton.addEventListener("click", function () {
+      var content = document.querySelector<HTMLDivElement>(".content");
+      if (content) {
+        content.classList.toggle("hidden");
+      }
+
+      var icons = toggleButton.querySelectorAll<SVGElement>("svg");
+      icons.forEach((icon) => {
+        icon.classList.toggle("hidden");
+      });
+    });
+  }
+</script>
