@@ -8,6 +8,7 @@ export default defineConfig({
 		starlight({
 			title: 'My Docs',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+      customCss: ['./styles.css'],
 			sidebar: [
 				{
 					label: 'Guides',
@@ -21,6 +22,9 @@ export default defineConfig({
 					autogenerate: { directory: 'reference' },
 				},
 			],
+      components: {
+          TableOfContents: './src/overrides/TableOfContents.astro',
+      },
 		}),
 	],
 });

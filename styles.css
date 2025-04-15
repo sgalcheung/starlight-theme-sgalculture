@@ -1,0 +1,21 @@
+
+:root,
+::backdrop {
+  /** Override Key layout values */
+  /* --sl-content-width: 45rem; */
+  /* 820px + 268px(right page sidebar:18.75rem,300px) */
+  /* --sl-content-width: 68rem; */
+
+  /* --sl-sidebar-width: 18.75rem; */
+
+}
+
+.header {
+  background-color: #ffffff;
+}
+
+/* TOC */
+.right-sidebar {
+  /* Remove border dividing right sidebar from main content column. */
+  border-inline-start: 0;
+}
