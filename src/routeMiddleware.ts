@@ -1,5 +1,6 @@
 import {
 	defineRouteMiddleware,
+  type StarlightRouteData,
 } from "@astrojs/starlight/route-data";
 
 export const onRequest = defineRouteMiddleware(async (context) => {
@@ -8,4 +9,14 @@ export const onRequest = defineRouteMiddleware(async (context) => {
   // console.log(starlightRoute);
 
   // starlightRoute.pagination 控制是否显示分页
+
+
+  usePageTitleInTOC(context.locals.starlightRoute);
 });
+
+export function usePageTitleInTOC(starlightRoute: StarlightRouteData) {
+  const overviewLink = starlightRoute.toc?.items[0];
+  if (overviewLink) {
+    overviewLink.text = starlightRoute.entry.data.title;
+  }
+}
