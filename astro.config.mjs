@@ -10,6 +10,12 @@ export default defineConfig({
     starlight({
       title: "My Docs",
       pagination: false,
+      locales: {
+        root: {
+          label: "简体中文",
+          lang: "zh-CN",
+        },
+      },
       social: [
         {
           icon: "github",
