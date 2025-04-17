@@ -3,6 +3,7 @@ import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 
 import cloudflare from "@astrojs/cloudflare";
+import starlightThemeFlexoki from "starlight-theme-flexoki";
 
 // https://astro.build/config
 export default defineConfig({
@@ -41,6 +42,11 @@ export default defineConfig({
         TableOfContents: "./src/overrides/TableOfContents.astro",
       },
       routeMiddleware: "./src/routeMiddleware.ts",
+      plugins: [
+        starlightThemeFlexoki({
+          accentColor: "blue",
+        }),
+      ],
     }),
   ],
 
