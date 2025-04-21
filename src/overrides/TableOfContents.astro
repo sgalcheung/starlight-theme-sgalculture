@@ -9,17 +9,21 @@ interface Props {
 const { pin = false } = Astro.props;
 ---
 
-<div class="toggle-button">
-  <Icon
-    name="right-caret"
-    size="1.5rem"
-    class:list={!pin ? "hidden" : ""}
-  />
-  <Icon
-    name="bars"
-    size="1.5rem"
-    class:list={pin ? "hidden" : ""}
-  />
+<div class="toggle-button-container">
+  <div class="toggle-button">
+    <Icon
+      name="right-caret"
+      color="var(--sl-color-gray-3)"
+      size="1.5rem"
+      class:list={!pin ? "hidden" : ""}
+    />
+    <Icon
+      name="bars"
+      color="var(--sl-color-gray-3)"
+      size="1.5rem"
+      class:list={pin ? "hidden" : ""}
+    />
+  </div>
 </div>
 
 <div class:list={["content", !pin ? "hidden" : ""]}>
@@ -29,6 +33,17 @@ const { pin = false } = Astro.props;
 </div>
 
 <style>
+  .toggle-button-container {
+    position: sticky;
+    top: 0rem; /* 距离顶部 1rem */
+    right: 1rem; /* 距离右侧 1rem */
+    z-index: 100; /* 确保按钮在最上层 */
+    display: flex;
+    justify-content: flex-end; /* 按钮靠右 */
+    background: var(--sl-color-bg);
+    margin-top: -1.8125rem; /* 负边距与内容区(.right-sidebar-panel)的 padding-top 相抵消 */
+  }
+
   .toggle-button {
     cursor: pointer;
     text-align: right;
