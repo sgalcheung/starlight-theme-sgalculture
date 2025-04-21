@@ -12,13 +12,13 @@ const { pin = false } = Astro.props;
 <div class="toggle-button">
   <Icon
     name="right-caret"
-    size="2rem"
-    class:list={["margin-left-1rem", !pin ? "hidden" : ""]}
+    size="1.5rem"
+    class:list={!pin ? "hidden" : ""}
   />
   <Icon
     name="bars"
-    size="2rem"
-    class:list={["margin-left-1rem", pin ? "hidden" : ""]}
+    size="1.5rem"
+    class:list={pin ? "hidden" : ""}
   />
 </div>
 
@@ -33,10 +33,6 @@ const { pin = false } = Astro.props;
     cursor: pointer;
     text-align: right;
     user-select: none; /* Prevent text from being selected */
-  }
-
-  .margin-left-1rem {
-    margin-left: -1rem;
   }
 
   .hidden {
