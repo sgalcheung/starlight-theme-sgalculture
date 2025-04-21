@@ -37,6 +37,10 @@ export default defineConfig({
           label: "Reference",
           autogenerate: { directory: "reference" },
         },
+        {
+          label: "MWeb-thems",
+          autogenerate: { directory: "mweb-themes" },
+        },
       ],
       components: {
         TableOfContents: "./src/overrides/TableOfContents.astro",
