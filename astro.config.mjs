@@ -9,7 +9,7 @@ import starlightThemeFlexoki from "starlight-theme-flexoki";
 export default defineConfig({
   integrations: [
     starlight({
-      title: "My Docs",
+      title: "Sgalculture Theme",
       pagination: false,
       locales: {
         root: {
