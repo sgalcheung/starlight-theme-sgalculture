@@ -200,7 +200,6 @@ Markdown 语法：
 1. 项目一 有序列表 `数字 + . + 空格键`
 2. 项目二 
 ![GitHub set up](http://zh.mweb.im/asset/img/set-up-git.gif)
-
 3. 项目三
 	1. 项目三的子项目一 有序列表 `TAB + 数字 + . + 空格键`
 	2. 项目三的子项目二
