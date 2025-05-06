@@ -1,5 +1,11 @@
+@layer base, starlight, theme, components, utilities;
+
+@import '@astrojs/starlight-tailwind';
 
 @import 'starlight-theme-flexoki/styles.css';
+
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
 
 
 /* 
@@ -113,12 +119,14 @@ h1#_top {
     margin-bottom: 8px;
   }
 
-  :not(h1, h2, h3, h4, h5, h6)+ :is(h4):not(:where(.not-content *)) {font-size: 18px;
+  :not(h1, h2, h3, h4, h5, h6)+ :is(h4):not(:where(.not-content *)) {
+    font-size: 18px;
     margin-top: 18px;
     margin-bottom: 8px;
   }
 
-  :not(h1, h2, h3, h4, h5, h6)+ :is(h5, h6):not(:where(.not-content *)) {font-size: 16px;
+  :not(h1, h2, h3, h4, h5, h6)+ :is(h5, h6):not(:where(.not-content *)) {
+    font-size: 16px;
     margin-top: 16px;
     margin-bottom: 8px;
   }
@@ -469,7 +477,7 @@ h1#_top {
   /* div[id^=mweb-chart-ele] svg {
     background-color: white;
   } */
-  
+
   .footnotes {
     font-size: 12px;
     color: #57606a;

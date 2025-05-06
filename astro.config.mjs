@@ -5,6 +5,8 @@ import starlight from "@astrojs/starlight";
 import cloudflare from "@astrojs/cloudflare";
 import starlightThemeFlexoki from "starlight-theme-flexoki";
 
+import tailwindcss from "@tailwindcss/vite";
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [
@@ -24,7 +26,7 @@ export default defineConfig({
           href: "https://github.com/sgalcheung/starlight-theme-sgalculture",
         },
       ],
-      customCss: ["./styles.css"],
+      customCss: ["./src/styles/starlight.css"],
       sidebar: [
         {
           label: "Guides",
@@ -55,4 +57,8 @@ export default defineConfig({
   ],
 
   adapter: cloudflare(),
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
